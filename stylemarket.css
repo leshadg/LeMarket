@@ -1,0 +1,217 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    flex: 1;
+}
+
+header {
+    background: #222;
+    color: white;
+    padding: 15px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div > a{
+    text-decoration: none;
+    color: white;
+}
+
+@media (hover:hover) {
+    header div > a:hover{
+        color:orange;
+}
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+@media (hover:hover){
+    
+    nav a:hover {
+    color: orange;
+}
+}
+
+.hero {
+    min-height: 300px;
+    padding: 40px 20px;
+    background: linear-gradient(45deg, orange, red);
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    animation: fadeIn 2s ease;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+@media (hover:hover){
+    
+    .hero button:hover{
+        color:orange;
+}
+}
+.hero button:active{
+    transform: scale(0.98);
+
+}
+
+.products {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    justify-items: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 220px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition: 0.3s;
+}
+
+@media (hover:hover) {
+    
+    .card:hover {
+        transform: scale(1.05);
+}
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.price {
+    color: green;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.card button {
+    padding: 10px;
+    border: none;
+    background: orange;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.1s ease;
+}
+
+.card button:active{
+    transform: scale(0.98);
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 10px;
+    display: flex;
+    align-items: start;
+    margin: 0;
+}
+
+.links{
+    padding:10px;
+    white-space: nowrap;
+}
+
+.info{
+    padding:10px;
+
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+@media (max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+    .hero h1 {
+        font-size: 36px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+
+    header {
+        flex-direction: column;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .logo {
+        font-size:20px;
+    }
+    nav a {
+        font-size: 15px;
+        margin-left: 10px;
+    }
+}
